@@ -12,5 +12,37 @@
 .panel{
 	background-color: white;
 	width: 50%;   
-	margin: auto;                 
+	margin: auto;      
+	border-radius: 25px;           
+}
+
+.panelContent
+{
+	margin: 10px auto;
+	align-items: baseline;
+}
+
+.contentLabel{
+	width: 30%;
+}
+
+.contentInput{
+	width: 70%;
+	text-align: right;
+}
+
+.submitButton{
+	color: #F9F1F0;
+	font-size: 24px;
+	background-color: #F79489;
+	border: 2px solid #F79489;
+	border-radius: 25px;
+	height: 40px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.submitButton:hover{
+	background-color: #f35f4e;
+	color: #e3bdb9;
 }
