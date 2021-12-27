@@ -1,6 +1,50 @@
 @charset "ISO-8859-1";
 
-.header2{
+body{
+	background-color: #F9F1F0;
+}
+
+#header{
 	width: 100%;
-	background-color: rgb(255, 127, 80);
+	height: 10vh;
+	
+}
+
+#javaTitle{
+	font-size: 56px;
+	font-weight: bold;
+	color: #F79489;
+	text-align: center;
+}
+
+#optionsPanel{
+	width: 100%;
+	background-color: #F9F1F0;
+	height: 10vh;
+	border: 2px solid #F79489;
+	border-radius: 25px;
+}
+
+.hBox{
+	text-align: center;
+	height: 100%;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+
+.optionButton{
+	color: #F9F1F0;
+	font-size: 24px;
+	background-color: #F79489;
+	border: 2px solid #F79489;
+	border-radius: 25px;
+	height: 40px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+.optionButton:hover{
+	background-color: #f35f4e;
+	color: #e3bdb9;
 }
