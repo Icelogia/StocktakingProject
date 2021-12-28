@@ -6,8 +6,8 @@ body{
 
 #header{
 	width: 100%;
-	height: 10vh;
-	
+	height: 80px;
+	display: block;
 }
 
 #javaTitle{
@@ -15,14 +15,16 @@ body{
 	font-weight: bold;
 	color: #F79489;
 	text-align: center;
+	height: 80px;
 }
 
 #optionsPanel{
 	width: 100%;
-	background-color: #F9F1F0;
-	height: 10vh;
+	background-color: rgb(255, 255, 255);
+	height: 80px;
 	border: 2px solid #F79489;
 	border-radius: 25px;
+	display: block;
 }
 
 .hBox{

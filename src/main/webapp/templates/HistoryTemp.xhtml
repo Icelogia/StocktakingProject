@@ -14,12 +14,14 @@
 						<th>Activity</th>
 						<th>Date</th>
 					</tr>
-					<tr>
-						<td>Mal</td>
-						<td>asd</td>
-						<td>asd</td>
-						<td>asd</td>
-					</tr>
+					<ui:repeat var="o" value="#{renderer.historyList.toArray()}">
+						<tr>
+							<td>#{o.deviceName}</td>
+							<td>#{o.workerName}</td>
+							<td>#{o.action}</td>
+							<td>#{o.dateOfAction}</td>
+						</tr>
+					</ui:repeat>
 				</table>
 			</div>
   		</ui:insert>

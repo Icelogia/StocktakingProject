@@ -12,6 +12,7 @@ table th{
 }
 
 table td{
+	background-color: white;
 	border: 1px solid #bbbbbb;
 	padding: 4px 8px;
 }

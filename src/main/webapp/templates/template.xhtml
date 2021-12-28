@@ -14,14 +14,14 @@
 			</div>
 		</div>
 		<div id ="optionsPanel">
-			<div class = "hBox">
-				<input class = "optionButton" type="button" value ="Issue"></input>
-				<input class = "optionButton" type="button" value ="Return"></input>
-				<input class = "optionButton" type="button" value ="Add"></input>
-				<input class = "optionButton" type="button" value ="Delete"></input>
-				<input class = "optionButton" type="button" value ="History"></input>
-				<input class = "optionButton" type="button" value ="Device List"> </input>
-			</div>
+			<h:form class = "hBox">
+				<h:commandButton class = "optionButton" value ="Issue" action="#{buttonBeans.getIssuePage}"></h:commandButton>
+				<h:commandButton class = "optionButton" value ="Return" action="#{buttonBeans.getReturnPage}"></h:commandButton>
+				<h:commandButton class = "optionButton" value ="Add"  action="#{buttonBeans.getAddPage}"></h:commandButton>
+				<h:commandButton class = "optionButton" value ="Delete"  action="#{buttonBeans.getRemovePage}"></h:commandButton>
+				<h:commandButton class = "optionButton" value ="History"  action="#{buttonBeans.getHistoryPage}"></h:commandButton>
+				<h:commandButton class = "optionButton" value ="Device List"  action="#{buttonBeans.getDevicesPage}"></h:commandButton>
+			</h:form >
 		</div>
 	</ui:composition>
 	
