@@ -1,4 +1,4 @@
-package com.stocktaking.instances;
+package proj.stocktaking.instances;
 
 public enum Actions 
 {

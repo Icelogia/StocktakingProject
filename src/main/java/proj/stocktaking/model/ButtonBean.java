@@ -1,4 +1,4 @@
-package com.stocktaking.model;
+package proj.stocktaking.model;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;

@@ -1,11 +1,11 @@
-package com.stocktaking.data;
+package proj.stocktaking.data;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.stocktaking.instances.Actions;
-import com.stocktaking.instances.HistoryItem;
+import proj.stocktaking.instances.Actions;
+import proj.stocktaking.instances.HistoryItem;
 
 public class ActionHistory 
 {
@@ -26,13 +26,7 @@ public class ActionHistory
 	
 	private void downloadData()
 	{
-		//Connection to database
-		HistoryItem historyItem = new HistoryItem("device", "Michal Wysocki", Actions.Add, new Date());
-		history.add(historyItem);
-		history.add(historyItem);
-		history.add(historyItem);
-		history.add(historyItem);
-		history.add(historyItem);
+		history = DatabaseConnector.getHistory();
 	}
 
 

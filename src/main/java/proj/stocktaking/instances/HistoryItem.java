@@ -1,4 +1,4 @@
-package com.stocktaking.instances;
+package proj.stocktaking.instances;
 
 import java.util.Date;
 

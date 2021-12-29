@@ -1,4 +1,4 @@
-package com.stocktaking.model;
+package proj.stocktaking.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -7,10 +7,12 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import com.stocktaking.data.ActionHistory;
-import com.stocktaking.data.DeviceStorage;
-import com.stocktaking.instances.HistoryItem;
-import com.stocktaking.instances.StorageItem;
+import proj.stocktaking.data.ActionHistory;
+import proj.stocktaking.data.DatabaseConnector;
+import proj.stocktaking.data.DeviceStorage;
+import proj.stocktaking.instances.Device;
+import proj.stocktaking.instances.HistoryItem;
+import proj.stocktaking.instances.StorageItem;
 
 @ManagedBean (name = "renderer")
 @SessionScoped
@@ -20,18 +22,23 @@ public class DataRenderer implements Serializable
 	private DeviceStorage storage;
 	
 	private List<HistoryItem> historyList;
-	private List<StorageItem> deviceList;
-	private List<String> devicesNames;
+	private List<Device> deviceList;
 	
 	public DataRenderer()
 	{
+		try 
+		{
+			DatabaseConnector.getConnection();
+			
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		
 		history = new ActionHistory();
 		storage = new DeviceStorage();
-		devicesNames = new ArrayList<String>();
-		devicesNames.add("Raj");
-		devicesNames.add("Lol");
-		devicesNames.add("XED");
-		
+
 		historyList = history.getHistory();
 		deviceList = storage.getDeviceList();
 	}
@@ -41,13 +48,9 @@ public class DataRenderer implements Serializable
 		return historyList;
 	}
 	
-	public List<StorageItem> getDeviceList()
+	public List<Device> getDeviceList()
 	{
 		return deviceList;
 	}
 	
-	public List<String> getDevicesNames()
-	{
-		return devicesNames;
-	}
 }
