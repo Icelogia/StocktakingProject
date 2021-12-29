@@ -9,25 +9,24 @@
 <h:body>
 	<h:form id="subContentContainer">
   		<ui:insert name="subContentContainer">
-  				<h:messages></h:messages>
+  			<h:form>
 				<br></br>
-				<h:form class = "panelContent">
+				<div class = "panelContent">
 					Worker: 
-					<h:inputText value="#{renderer.workerName}" onchange = "submit()" valueChangeListener="#{renderer.processValueChange}">
-					</h:inputText>
-					
-				</h:form>
+					<h:inputText value="#{renderer.workerName}" onchange = "submit()" valueChangeListener="#{renderer.processWorkerNameChange}"></h:inputText>
+				</div>
 				<br></br>
-				<h:form class = "panelContent">
+				<div class = "panelContent">
 					Device: 
-					<h:inputText  value="#{renderer.deviceName}"></h:inputText>
-				</h:form>
+					<h:inputText  value="#{renderer.deviceName}" onchange = "submit()" valueChangeListener="#{renderer.processDeviceNameChange}"></h:inputText>
+				</div>
 				<br></br>
-				<h:form class = "panelContent">
+				<div class = "panelContent">
 					Amount: 
-					<h:inputText value="#{renderer.amount}" ></h:inputText>
-				</h:form>
+					<h:inputText value="#{renderer.amount}" onchange = "submit()" valueChangeListener="#{renderer.processAmountChange}"></h:inputText>
+				</div>
 				<br></br>
+			</h:form>
   		</ui:insert>
   	</h:form>
 </h:body>

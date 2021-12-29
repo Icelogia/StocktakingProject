@@ -36,6 +36,11 @@ public class Device
 		this.inStock -= value;
 	}
 	
+	public void increaseInStockAmountBy(int value)
+	{
+		this.inStock += value;
+	}
+	
 	public int getInStock() 
 	{
 		return inStock;

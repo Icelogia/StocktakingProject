@@ -1,22 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
 <body>
 	<div id="subContentContainer">
   		<ui:insert name="subContentContainer">
-			<br></br>
+  			<h:form>
+				<br></br>
 				<div class = "panelContent">
-					<span class = "contentLabel">Device: </span>
-					<input value="" class = "contentInput"></input>
+					Device: 
+					<h:inputText  value="#{renderer.deviceName}" onchange = "submit()" valueChangeListener="#{renderer.processDeviceNameChange}"></h:inputText>
 				</div>
 				<br></br>
 				<div class = "panelContent">
-					<span class = "contentLabel">Amount: </span>
-					<input value="0" class = "contentInput"></input>
+					Amount: 
+					<h:inputText  value="#{renderer.amount}" onchange = "submit()" valueChangeListener="#{renderer.processAmountChange}"></h:inputText>
 				</div>
-			<br></br>
+				<br></br>
+			</h:form>
   		</ui:insert>
   	</div>
 </body>

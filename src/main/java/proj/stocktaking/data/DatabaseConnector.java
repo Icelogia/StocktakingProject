@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -182,7 +183,7 @@ final public class DatabaseConnector
 	
 	private static String getWorkerNameById(int id, List<Worker> workers)
 	{
-		String workerName = null;
+		String workerName = "";
 		
 		for(int i = 0; i < workers.size(); i++)
 		{
@@ -228,13 +229,13 @@ final public class DatabaseConnector
 	
 	public static void updateDevice(Device device)
 	{
-		String values = "issueAmount = '" + device.getIssueAmount() + "', inStock = '" + device.getInStock() + "'";
+		String values = "issueAmount = '" + device.getIssueAmount() + "', inStock ='" + device.getInStock() + "' ";
 		String where = "id = " + device.getId() + ";";
-		String query = "update device set " + values + "where " + where;
+		String query = "update device set " + values + " where " + where;
 		
 		try 
 		{
-			rs = st.executeQuery(query);
+			st.executeUpdate(query);
 		} 
 		catch (SQLException e) 
 		{
@@ -245,14 +246,26 @@ final public class DatabaseConnector
 	public static void addHistoryItem(Device device, Worker worker, Actions action, int amount)
 	{
 		Date date = new Date();
-		String values = "('" + worker.getId() + "','" + device.getId() + "','" + action.toString() + "','" + date + "','" + amount + "');";
-		String query = "insert into device ('worker', 'device', 'activity', 'date', 'amount') values " + values;
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String dateVal = sdf.format(date);
+		System.out.print(dateVal);
+		
+		String workerId = "0";
+		
+		if(worker != null) 
+		{
+			workerId = String.valueOf(worker.getId());
+		}
+		
+		String values = "('" + workerId + "','" + device.getId() + "','" + action.toString() + "','" + dateVal + "','" + amount + "');";
+		String query = "insert into history (worker, device, activity, date, amount) values " + values;
 		try 
 		{
-			rs = st.executeQuery(query);
+			st.executeUpdate(query);
 		} 
 		catch (SQLException e) 
 		{
+			System.out.print("SQL Problem!");
 			e.printStackTrace();
 		}
 	}
