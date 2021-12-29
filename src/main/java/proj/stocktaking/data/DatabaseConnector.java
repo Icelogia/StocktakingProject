@@ -211,4 +211,49 @@ final public class DatabaseConnector
 		
 		return deviceName;
 	}
+	
+	public static void addNewDevice(Device device)
+	{
+		String values = "('" + device.getName() + "','0','" + device.getIssueAmount() + "');";
+		String query = "insert into device ('name', 'issueAmount', 'inStock') values " + values;
+		try 
+		{
+			rs = st.executeQuery(query);
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public static void updateDevice(Device device)
+	{
+		String values = "issueAmount = '" + device.getIssueAmount() + "', inStock = '" + device.getInStock() + "'";
+		String where = "id = " + device.getId() + ";";
+		String query = "update device set " + values + "where " + where;
+		
+		try 
+		{
+			rs = st.executeQuery(query);
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public static void addHistoryItem(Device device, Worker worker, Actions action, int amount)
+	{
+		Date date = new Date();
+		String values = "('" + worker.getId() + "','" + device.getId() + "','" + action.toString() + "','" + date + "','" + amount + "');";
+		String query = "insert into device ('worker', 'device', 'activity', 'date', 'amount') values " + values;
+		try 
+		{
+			rs = st.executeQuery(query);
+		} 
+		catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+	}
 }

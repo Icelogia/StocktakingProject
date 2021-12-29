@@ -24,5 +24,6 @@
 			<attribute name="owner.project.facets" value="jst.jsf"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Icelogia/Desktop/Studia/Semestr 5/JavaEE/Libs/primefaces-10.0.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
